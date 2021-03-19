@@ -44,12 +44,12 @@ def stats(update, context):
 @run_async
 def start(update, context):
     start_string = f'''
-Hi, I'm [Slam](https://github.com/breakdowns/slam-mirrorbot), a multipurpose bot for [hafitz](t.me/hafitzXD)
+Hi, I'm Rez i can mirror all your links to Google drive!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
-    update.effective_message.reply_photo("https://telegra.ph/file/db03910496f06094f1f7a.jpg", start_string, parse_mode=ParseMode.MARKDOWN)
-
-
+    sendMessage(start_string, context.bot, update)
+    
+    
 @run_async
 def restart(update, context):
     restart_message = sendMessage("Restarting, Please wait!", context.bot, update)
