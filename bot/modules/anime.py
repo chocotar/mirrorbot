@@ -252,11 +252,11 @@ def manga(update: Update, _):
 @run_async
 def weebhelp(update, context):
     help_string = '''
-• `/al`*:* search anime
-• `/chr`*:* search character
-• `/mng`*:* search manga
+• /al <i>[search anime]</i>
+• /chr <i>[search character]</i>
+• /mng <i>[search manga]</i>
 '''
-    update.effective_message.reply_photo("https://telegra.ph/file/db03910496f06094f1f7a.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
+    sendMessage(help_string, context.bot, update)
 
 
 ANIME_HANDLER = CommandHandler("al", anime)
