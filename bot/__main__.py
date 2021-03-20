@@ -41,13 +41,25 @@ def stats(update, context):
     sendMessage(stats, context.bot, update)
 
 
+
 @run_async
 def start(update, context):
-    start_string = f'''
-Hi, I'm Rez i can mirror all your links to Google drive!
-Type /{BotCommands.HelpCommand} to get a list of available commands
-'''
-    sendMessage(start_string, context.bot, update)
+    LOGGER.info(
+        "UID: {} - UN: {} - MSG: {}".format(
+            update.message.chat.id, update.message.chat.username, update.message.text
+        )
+    )
+    if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
+        if update.message.chat.type == "private":
+            sendMessage(
+                f"Hey <b>{update.message.chat.first_name}</b>. Welcome to <b>LoaderX Bot</b>",
+                context.bot,
+                update,
+            )
+        else:
+            sendMessage("I'm alive :)", context.bot, update)
+    else:
+        sendMessage("It's Private Bot!", context.bot, update)
     
     
 @run_async
