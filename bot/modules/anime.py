@@ -256,7 +256,7 @@ def weebhelp(update, context):
 • /chr <i>[search character]</i>
 • /mng <i>[search manga]</i>
 '''
-    update.effective_message.reply_text(help_string, parse_mode=ParseMode.MARKDOWN)
+    update.effective_message.reply_text(help_string, parse_mode=ParseMode.HTML)
 
 
 ANIME_HANDLER = CommandHandler("al", anime)
