@@ -52,7 +52,7 @@ def start(update, context):
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         if update.message.chat.type == "private":
             sendMessage(
-                f"Hey <b>{update.message.chat.first_name}</b>. Welcome to <b>LoaderX Bot</b>",
+                f"Hey <b>{update.message.chat.first_name}</b>. Welcome to <b>Rez Mirror Bot</b>",
                 context.bot,
                 update,
             )
